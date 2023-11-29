@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--Setter-Injection-->
+	<bean id="harry-data" class="com.nanch.xml_config.Character">
+		
+		<property name="id">
+			<value>1</value>
+		</property>
+
+		<property name="name">
+			<value>Harry</value>
+		</property>
+		
+		<property name="mail">
+			<value>harry@movie.com</value>
+		</property>
+
+	</bean>
+	
+	
+	<!--Setter Based Injection-->
+	<bean id="hermione-data" class="com.nanch.xml_config.Character">
+		<property name="id" value="2"/>
+		<property name="name" value="Hermione"/>
+		<property name="mail" value="hermione@movie.com"/>
+	</bean>
+	
+	<!--Constructor Based Injection-->
+	<bean id="ron-data" class="com.nanch.xml_config.Character">
+		<constructor-arg name="id" value="3"/>
+		<constructor-arg name="name" value="Ron"/>
+		<constructor-arg name="mail" value="ron@movie.com"/>
+	</bean>
+	
+	<!--Constructor Based Injection-->
+	<bean id="draco-data" class="com.nanch.xml_config.Character">
+		<constructor-arg index="0" value="4"/>
+		<constructor-arg index="2" value="draco@movie.com"/>
+		<constructor-arg index="1" value="Draco"/>
+	</bean>
+	
+	<!--Constructor Based Injection-->
+	<bean id="ginny-data" class="com.nanch.xml_config.Character">
+		<constructor-arg type="int" value="5"/>
+		<constructor-arg type="java.lang.String" value="Ginny"/>
+		<constructor-arg type="java.lang.String" value="ginny@movie.com"/>
+	</bean>
+
+</beans>
+

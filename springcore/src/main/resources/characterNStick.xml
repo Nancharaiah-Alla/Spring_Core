@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 1. using ref attribute-->
+	<bean id="harry-data" class="com.nanch.xml_config.CharacterNStick" p:id="1" p:name="Harry">
+	<property name="stick" ref="wand"/>
+	</bean>
+	
+	<!-- 2. autowire="byName" means ((property name="stick" AND bean id="stick")) -->
+<!-- 	<bean id="harry-data-autowire-n" class="com.nanch.xml_config.CharacterNStick" p:id="1" p:name="Harry" autowire="byName">
+	</bean> -->
+	
+	<!-- 3. autowire="byType" means ((broom implements stick)) -->
+	<bean id="harry-data-autowire-t" class="com.nanch.xml_config.CharacterNStick" p:id="1" p:name="Harry" autowire="byType">
+	</bean>
+	
+	<bean id="broom" class="com.nanch.xml_config.Broom"  primary="true">
+	<property name="color" value="Blue" />
+	</bean>
+	
+	<bean id="wand" class="com.nanch.xml_config.Wand" >
+	<property name="color" value="Blue" />
+	</bean>
+
+</beans>
+
