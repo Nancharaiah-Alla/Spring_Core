@@ -28,9 +28,9 @@ public class Main {
 
 //		CharacterNStick characterNStick = context.getBean("harry-data", CharacterNStick.class);
 		CharacterNStick characterNStick = context.getBean("harry-data-autowire-t", CharacterNStick.class);
+		Broom broom = context.getBean("broom", Broom.class);
 		
-		
-		System.out.println(characterNStick.getName() + "'s Broom Color is " + characterNStick.getStick());
+		System.out.println(characterNStick.getName() + "'s Broom Color is " + characterNStick.getStick().getColor());
 //		characterNStick.getStick().stick();
 	}
 }
